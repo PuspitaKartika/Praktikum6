@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:praktikum6/bloc/login/login_cubit.dart';
 import 'package:praktikum6/ui/splash.dart';
 import 'package:praktikum6/utils/routes.dart';
+import 'bloc/register/register_cubit.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => LoginCubit())
+        BlocProvider(create: (context) => LoginCubit()),
+        BlocProvider(create: (context) => RegisterCubit())
       ],
       child: MaterialApp(
         title: "Praktikum 6",
